@@ -44,7 +44,9 @@ class ProductController extends Controller
         $validator = Validator::make($input, [
             'category_id' => 'required',
             'name' => 'required',
-            'detail' => 'required'
+            'detail' => 'required',
+            'price' => 'required',
+            'quantity' => 'required',
         ]);
 
         if($validator->fails()){
@@ -98,7 +100,9 @@ class ProductController extends Controller
         $validator = Validator::make($input, [
             'category_id' => 'required',
             'name' => 'required',
-            'detail' => 'required'
+            'detail' => 'required',
+            'price' => 'required',
+            'quantity' => 'required',
         ]);
 
         if($validator->fails()){
