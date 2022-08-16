@@ -80,13 +80,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::with('category')->find($id);
 
         if (is_null($product)) {
             return $this->sendError('Product not found.');
         }
 
-        return $this->responseSuccess(new ProductResource($product), 'Product Retrieved Successfully');
+        return $this->responseSuccess($product, 'Product Retrieved Successfully');
     }
 
 
